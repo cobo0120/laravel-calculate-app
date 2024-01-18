@@ -20,14 +20,16 @@
                 <button class="" type="button"></button>
 
                 <div id="subtitle" class="ml-auto hidden sm:block">
-                    <a class="text-gray-300 font-semibold nav-link" href="calculate_ver3.html">積算評価計算シミュレーションへ</a>
+                    <a class="text-gray-300 font-semibold nav-link"
+                        href="{{ route('calculates.calc1') }}">積算評価計算シミュレーションへ</a>
                 </div>
             </div>
         </nav>
 
         <!-- スマートフォンサイズで表示させる -->
         <div class="sm:hidden flex justify-end">
-            <a class="text-blue-500 font-semibold text-xs underline" href="calculate_ver3.html">積算評価計算シミュレーションへ</a>
+            <a class="text-blue-500 font-semibold text-xs underline"
+                href="{{ route('calculates.calc1') }}">積算評価計算シミュレーションへ</a>
         </div>
     </header>
 
@@ -35,6 +37,7 @@
     <main>
         <div class="mt-5 container mx-auto">
             <form name="myForm">
+                @csrf
                 <div class="sm:flex">
                     <!--後半戦-->
                     <div class="ml-auto">
@@ -418,12 +421,6 @@
 
                 <!-- 印刷と数値入力リセットする入力方法 -->
                 <script>
-                    // document
-                    //   .getElementById("print")
-                    //   .addEventListener("click", function () {
-                    //     window.print();
-                    //   });
-
                     function resetForm() {
                         document.forms["myForm"].reset();
                     }
@@ -471,7 +468,7 @@
         </div>
     </main>
     <!-- js -->
-    <script type="" src="{{ asset('/js/sanko.js') }}"></script>
+    <script type="" src="{{ asset('/js/calculate2.js') }}"></script>
 </body>
 
 <hr id="hr" />

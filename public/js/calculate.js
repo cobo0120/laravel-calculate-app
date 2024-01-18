@@ -34,23 +34,23 @@ document.addEventListener('click', () => {
            serviceLife.value = "";
            break;
        case "2":
-           constructionCost.value = "262.2";
+          //  constructionCost.value = "262.2";
            serviceLife.value = "47";
            break;
        case "3":
-           constructionCost.value = "240.2";
+          //  constructionCost.value = "240.2";
            serviceLife.value = "47";
            break;
        case "4":
-           constructionCost.value = "197.3";
+          //  constructionCost.value = "197.3";
            serviceLife.value = "34";
            break;
        case "5":
-           constructionCost.value = "165.4";
+          //  constructionCost.value = "165.4";
            serviceLife.value = "19";
            break;
        case "6":
-           constructionCost.value = "165.4";
+          //  constructionCost.value = "165.4";
            serviceLife.value = "22";
            break;
        default:

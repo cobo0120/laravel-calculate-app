@@ -13,19 +13,6 @@
 <!-- 積算評価シミュレーター -->
 
 <body>
-    <!-- <header>
-      <nav class="bg-gray-800 w-full">
-        <div
-          class="container mx-auto px-6 py-2"
-        >
-          <a class="text-white text-lg font-semibold" href="#">積算評価シミュレーター</a>
-        </div>
-
-         <div class="">
-            <a class="text-white text-lg font-semibold" href="#">利回り計算機</a>
-         </div>
-      </nav>
-    </header> -->
     <header id="header">
         <nav class="bg-gray-800 w-full">
             <div class="container mx-auto px-6 py-2 flex">
@@ -33,20 +20,23 @@
                 <button class="" type="button"></button>
 
                 <div id="subtitle" class="ml-auto hidden sm:block">
-                    <a class="text-gray-300 font-semibold nav-link" href="calculate_ver5.html">収益・投資物件簡易収支シミュレーションへ</a>
+                    <a class="text-gray-300 font-semibold nav-link"
+                        href="{{ route('calculates.calc2') }}">収益・投資物件簡易収支シミュレーションへ</a>
                 </div>
             </div>
         </nav>
 
         <!-- スマートフォンサイズで表示させる -->
         <div class="sm:hidden flex justify-end">
-            <a class="text-blue-500 font-semibold text-xs underline" href="calculate_ver5.html">収益・投資物件簡易収支シミュレーションへ</a>
+            <a class="text-blue-500 font-semibold text-xs underline"
+                href="{{ route('calculates.calc2') }}">収益・投資物件簡易収支シミュレーションへ</a>
         </div>
     </header>
 
     <main>
         <div class="mt-5 container mx-auto">
             <form name="myForm">
+                @csrf
                 <div class="sm:flex">
                     <!--左側表示-->
                     <div class="ml-auto">
@@ -133,7 +123,7 @@
 
                                             <input type="number"
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
-                                                id="building_age" placeholder="" value="" />
+                                                id="building_age" placeholder="" value="">
 
                                             <label for="building_age" class="col-span-2 sm:col-span-2">年　</label>
                                         </div>
@@ -144,8 +134,8 @@
 
                                             <input type="number"
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center bg-gray-200"
-                                                id="construction_cost" placeholder="" step="" value=""
-                                                readonly="readonly" ` />
+                                                id="construction_cost" placeholder="" step=""
+                                                readonly="readonly">
 
                                             <label for="construction_cost" class="col-span-2 sm:col-span-2">万円</label>
                                         </div>
@@ -327,12 +317,6 @@
 
             <!-- 印刷と数値入力リセットする入力方法 -->
             <script>
-                // document
-                //   .getElementById("print")
-                //   .addEventListener("click", function () {
-                //     window.print();
-                //   });
-
                 function resetForm() {
                     document.forms["myForm"].reset();
                 }
@@ -442,6 +426,7 @@
     </main>
     <!-- js -->
     {{-- <script src="{{ asset('/js/.js') }}"></script> --}}
+    <script type="" src="{{ asset('/js/building.js') }}"></script>
     <script type="" src="{{ asset('/js/calculate.js') }}"></script>
 </body>
 
