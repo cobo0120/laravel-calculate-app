@@ -1,4 +1,4 @@
-$('#building_age').on('input', function() {
+$('#building_age').on('blur', function() {
     // 現在の年(西暦)を取得
     let current_year = new Date().getFullYear();
     // ビューのcalc1のvalueにある築年数を取得する
