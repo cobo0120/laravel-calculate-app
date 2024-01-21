@@ -38,4 +38,4 @@ Route::get('/calculates/calc1_test',[CalculateController::class,'calc1_show_test
 
 // アクセスしたら実行する（建物構造と築年数の内容によってデータベースから値を取得する様に設定する）
 // 築年数の入力アクションで起動
-Route::get('/data_building',[CalculateController::class,'data_building'])->name('data_building');
+Route::post('/data_building',[CalculateController::class,'data_building'])->name('data_building');
