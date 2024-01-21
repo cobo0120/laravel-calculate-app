@@ -8,9 +8,14 @@ $('#building_age').on('input', function() {
     //  ビューのcalc1にあるbuilding_structureのvalueを条件に算出する
     let building_structure = $('#building_structure').val();
 
+    $.ajaxSetup({
+        headers: {
+          "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+      });
     $.ajax({
         type: "POST",
-        url: "../../data_building",
+        url: "../data_building",
         async: true,
         dataType: 'json',
         data: {
@@ -25,4 +30,5 @@ $('#building_age').on('input', function() {
     .fail((error) => {
         alert('通信失敗');
     });
+
 });

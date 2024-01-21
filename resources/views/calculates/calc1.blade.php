@@ -36,6 +36,7 @@
 
     <main>
         <div class="mt-5 container mx-auto">
+            <meta name="csrf-token" content="{{ csrf_token() }}">
             <form name="myForm">
                 @csrf
                 <div class="sm:flex">
@@ -135,7 +136,7 @@
 
                                             <input type="number"
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center bg-gray-200"
-                                                id="construction_cost" placeholder="" step=""
+                                                id="construction_cost" placeholder="" step="" value=""
                                                 readonly="readonly">
 
                                             <label for="construction_cost" class="col-span-2 sm:col-span-2">万円</label>
