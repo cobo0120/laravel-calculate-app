@@ -20,7 +20,7 @@ $('#building_age').on('input', function() {
     })
     .done((data) => {
         // calc1のビューでid=construction_costの箇所に入れる
-        $('#construction_cost').val(data.constructionCost);
+        $('#construction_cost').val(data.construction_cost);
     })
     .fail((error) => {
         alert('通信失敗');

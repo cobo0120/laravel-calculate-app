@@ -46,14 +46,14 @@ public function data_building(Request $request){
     }
 
     // 年と構造に基づいてデータベースから標準建設費を取得
-    $construction_cost = DB::table('buildings')
-    ->where('building_age', $request->built_year)
-    ->whereRaw("{$columnName} IS NOT NULL")
-    ->first();
+    $construction_cost = 
+    Building::where('building_age', $request->built_year)
+        ->whereNotNull($columnName)
+        ->first();
 
     // 標準建築費をJSON形式でレスポンスとして返す
     return response()->json([
-        'constructionCost' => $construction_cost,
+        'construction_cost' => $construction_cost,
     ]);
 }
 
