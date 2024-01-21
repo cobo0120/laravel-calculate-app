@@ -1,5 +1,5 @@
 $('#building_age').on('input', function() {
-    // 現在の年を取得
+    // 現在の年(西暦)を取得
     let current_year = new Date().getFullYear();
     // ビューのcalc1のvalueにある築年数を取得する
     let building_age = $('#building_age').val();
@@ -10,7 +10,7 @@ $('#building_age').on('input', function() {
 
     $.ajax({
         type: "POST",
-        url: "../data_building",
+        url: "../../data_building",
         async: true,
         dataType: 'json',
         data: {
