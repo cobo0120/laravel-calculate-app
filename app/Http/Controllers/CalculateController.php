@@ -45,19 +45,65 @@ public function data_building(Request $request){
             break;
     }
 
-    // 年と構造に基づいてデータベースから標準建設費を取得
+    // 建築年（西暦）と建物構造の値に基づいてデータベースから標準建設費を取得
     $construction_cost = 
     Building::where('building_age', $request->built_year)
         ->whereNotNull($columnName)
         ->first();
 
     // 標準建築費をJSON形式でレスポンスとして返す
-    return response()->json([
-        'construction_cost' => $construction_cost,
-    ]);
+   switch ($construction_cost->construction_cost) {
+    case 1:
+        return response()->json([
+            'construction_cost' => $construction_cost->src_price,
+        ]);
+    case 2:
+        return response()->json([
+            'construction_cost' => $construction_cost->sc_price,
+        ]);
+    case 3:
+        return response()->json([
+            'construction_cost' => $construction_cost->rc_price,
+        ]);
+    case 4:
+        return response()->json([
+            'construction_cost' => $construction_cost->lgs_price,
+        ]);
+    case 5:
+        return response()->json([
+            'construction_cost' => $construction_cost->wood_price,
+        ]);
+    default:
+        return response()->json([
+            'construction_cost' => $construction_cost,
+        ]);
 }
 
+   // 標準建設費が見つからない場合、建物の年齢に基づいて最新または最古の費用を取得
+    if (!$construction_cost) {
+        if ($request->building_age <= 3) {
+            // 最新の標準建築費を取得
+            $construction_cost = Building::whereNotNull($columnName)
+                ->orderBy('building_age', 'desc')
+                ->first();
+        } else {
+            // 最古の標準建築費を取得
+            $construction_cost = Building::whereNotNull($columnName)
+                ->orderBy('building_age', 'asc')
+                ->first();
+        }
+        return response()->json([
+            'construction_cost' => $construction_cost,
+        ]);
+    }
 
-
-
+   
 }
+}
+// 解説
+// $construction_cost が null の場合、データベースに一致するレコードが存在しないことを意味します。
+// この場合、関数は建物の年齢が3年以下かどうかをチェックします。3年以下であれば、建物の年齢を降順に並べ替えて最初のレコードを取得し、
+// 最新の建設費を取得します。建物の年齢が3年を超える場合、建物の年齢を昇順に並べ替えて最初のレコードを取得し、最古の建設費を取得します
+
+
+

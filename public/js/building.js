@@ -21,10 +21,12 @@ $('#building_age').on('input', function() {
         data: {
             built_year: built_year,
             building_structure: building_structure,
+            building_age: building_age
         }
     })
     .done((data) => {
         // calc1のビューでid=construction_costの箇所に入れる
+        // もしconstruction_costがvalue=１の場合は、src_priceを$('#construction_cost')に表示させる
         $('#construction_cost').val(data.construction_cost);
     })
     .fail((error) => {
