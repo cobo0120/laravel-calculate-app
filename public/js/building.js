@@ -27,7 +27,7 @@ $('#building_age').on('blur', function() {
     .done((data) => {
       console.log(data);
         // calc1のビューでid=construction_costの箇所に入れる
-      $('#construction_cost').val(parseFloat(data.construction_cost));
+      $('#construction_cost').val(parseFloat(data.construction_cost.price));
     })
     .fail((error) => {
         alert('通信失敗');
