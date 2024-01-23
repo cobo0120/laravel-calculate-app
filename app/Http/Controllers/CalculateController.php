@@ -28,26 +28,26 @@ public function data_building(Request $request){
     // 建築構造を値で取得する（建築構造はvalue数値で$requestに渡されるはず）
     $building_structure = $request->building_structure;
     switch ($building_structure) {
-        case "1":
+        case "2":
             $columnName = 'src_price';
             break;
-        case "2":
+        case "3":
             $columnName = 'rc_price';
             break;
-        case "3":
+        case "4":
             $columnName = 'sc_price';
             break;
-        case "4":
+        case "5":
             $columnName = 'lgs_price';
             break;
-        case "5":
+        case "6":
             $columnName = 'wood_price';
             break;
     }
 
     // 年と構造に基づいてデータベースから標準建設費を取得
     $construction_cost = 
-   Building::select($columnName . ' as price')->where('building_age', $request->built_year)
+    Building::select($columnName . ' as price')->where('building_age', $request->built_year)
         ->whereNotNull($columnName)
         ->first();
 
@@ -55,13 +55,13 @@ public function data_building(Request $request){
     if (is_null($construction_cost)) {
         if ($request->building_age <= 3) {
             // 最新の標準建築費を取得
-            $construction_cost = Building::select($columnName)
+    $construction_cost = Building::select($columnName .' as price')
                 ->whereNotNull($columnName)
                 ->orderBy('building_age', 'desc')
                 ->first();
         } else {
             // 最古の標準建築費を取得
-            $construction_cost = Building::select($columnName)
+            $construction_cost = Building::select($columnName.' as price')
                 ->whereNotNull($columnName)
                 ->orderBy('building_age', 'asc')
                 ->first();

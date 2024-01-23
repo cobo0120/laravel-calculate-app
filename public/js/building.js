@@ -1,4 +1,4 @@
-$('#building_age').on('blur', function() {
+$('#building_age, #building_structure').on('change', function() {
     // 現在の年(西暦)を取得
     let current_year = new Date().getFullYear();
     // ビューのcalc1のvalueにある築年数を取得する
@@ -30,7 +30,7 @@ $('#building_age').on('blur', function() {
       $('#construction_cost').val(parseFloat(data.construction_cost.price));
     })
     .fail((error) => {
-        alert('通信失敗');
+        // alert('建築構造を選択してください');
     });
 
 });

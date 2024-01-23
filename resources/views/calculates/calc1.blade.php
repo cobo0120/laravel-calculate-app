@@ -134,9 +134,10 @@
                                             <label for="construction_cost"
                                                 class="col-span-5 sm:col-span-2">標準建築費</label>
 
-                                            <input type=""
+                                            <input type="number"
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center bg-gray-200"
-                                                id="construction_cost" placeholder="" step="" value="">
+                                                id="construction_cost" placeholder="" step="" value=""
+                                                readonly="readonly">
 
                                             <label for="construction_cost" class="col-span-2 sm:col-span-2">万円</label>
                                         </div>
@@ -147,7 +148,7 @@
                                             <input type="number"
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center bg-gray-200"
                                                 id="service_life" placeholder="" step="1.0" value=""
-                                                readonly="readonly" />
+                                                readonly="readonly">
 
                                             <label for="service_life" class="col-span-2 sm:col-span-2">年　</label>
                                         </div>

@@ -8,21 +8,10 @@
 // building_age = '築年数'
 // remaining_life = '残存年数'
 
-// 再調達原価だが、使用するかクライアントに確認する
-// 1/4再調達原価は使わない
-//  const src = 180000;
-//  const rc = 180000;
-//  const s = 150000;
-//  const keitetsu = 130000;
-//  const mokuzou = 130000;
-
-
-
 
 // クリックしたら変数宣言された後、項目選択で切り替わる度に自動表示させる
 document.addEventListener('click', () => {
  const buildingStructure = document.querySelector('#building_structure');
- const constructionCost = document.querySelector("#construction_cost");
  const serviceLife = document.querySelector("#service_life");
  
 
@@ -61,9 +50,8 @@ document.addEventListener('click', () => {
 
 
 
-
-
 const calculate = () => {
+  
 // 変数宣言
   const calculation0 = document.querySelector('#calculation0');
   const calculation1 = document.querySelector('#calculation1');
@@ -71,20 +59,22 @@ const calculate = () => {
 
   //入力情報に入力された数値に単位をつけて表示（スマートフォンサイズの場合にのみ表示させる）
  // 各入力フィールドに対して、changeイベントリスナーを追加します。
-document.querySelector("#site_area").addEventListener('change',inputInformation);
-document.querySelector("#road_price").addEventListener('change', inputInformation);
-document.querySelector("#building_area").addEventListener('change', inputInformation);
-document.querySelector("#building_age").addEventListener('change', inputInformation);
-document.querySelector("#construction_cost").addEventListener('change', inputInformation);
-document.querySelector("#service_life").addEventListener('change', inputInformation);
+// document.querySelector("#site_area").addEventListener('change',inputInformation);
+// document.querySelector("#road_price").addEventListener('change', inputInformation);
+// document.querySelector("#building_area").addEventListener('change', inputInformation);
+// document.querySelector("#building_age").addEventListener('change', inputInformation);
+// document.querySelector("#construction_cost").addEventListener('change', inputInformation);
+// document.querySelector("#service_life").addEventListener('change', inputInformation);
 
 
 // ディスプレイを更新する関数
-function inputInformation() {
+// function inputInformation() {
  let site_area = document.querySelector("#site_area").value;
  let road_price = document.querySelector("#road_price").value;
  let building_area = document.querySelector('#building_area').value;
+ let construction_cost = document.querySelector('#construction_cost').value;
  let building_age = document.querySelector('#building_age').value;
+ let service_life = document.querySelector('#service_life').value;
  
 
  document.getElementById("lbl_site_area").innerText = site_area + "㎡";
@@ -94,14 +84,42 @@ function inputInformation() {
  document.querySelector("#lbl_construction_cost").innerText = construction_cost + "万円";
  document.querySelector("#lbl_service_life").innerText = service_life + "年";
 
+
+ let building_structure = document.querySelector("#building_structure").value;
+
+ switch (building_structure) {
+  case "1":
+   document.querySelector("#lbl_building_structure").innerText = "選択してください";
+   break;
+ case "2":
+   document.querySelector("#lbl_building_structure").innerText = "鉄骨鉄筋コン(SRC造)";
+   break;
+ case "3":
+   document.querySelector("#lbl_building_structure").innerText = "鉄筋コン(RC造)";
+   break;
+ case "4":
+   document.querySelector("#lbl_building_structure").innerText = "鉄骨(S造)";
+   break;
+ case "5":
+   document.querySelector("#lbl_building_structure").innerText = "軽量鉄骨";
+   break;
+ case "6":
+   document.querySelector("#lbl_building_structure").innerText = "木造";
+   break;
+ default:
+   document.querySelector("#lbl_building_structure").innerText = building_structure;
 }
+
+// もし建築構造でinnerTextに入る値がXの場合は、建物構造名を入れる
+// }
 
 // 建物構造を選択したら入力情報に挿入される関数
 // ホイストとは何ぞや？　Uncaught ReferenceError: Cannot access 'building_structure' before initialization　とでたが
+
 document.addEventListener('change', () => {
- const buildingStructureValue = document.querySelector("#building_structure").value;
- const constructionCost = document.querySelector('#construction_cost').value;
- const serviceLife = document.querySelector('#service_life').value;
+ let buildingStructureValue = document.querySelector("#building_structure").value;
+ let constructionCost = document.querySelector('#construction_cost').value;
+ let serviceLife = document.querySelector('#service_life').value;
  
  let structureLabel = "";
  switch (buildingStructureValue) {
@@ -115,6 +133,7 @@ document.addEventListener('change', () => {
    break;
  case "2":
   structureLabel = getStructureLabel(buildingStructureValue, "鉄骨鉄筋コン(SRC造)");
+  
    break;
  case "3":
    structureLabel = getStructureLabel(buildingStructureValue, "鉄筋コン(RC造)");
@@ -149,24 +168,24 @@ function updateLabelText(labelId, text) {
 
 });
 
-  //敷地面積の値を取得し変数に格納    
-   let site_area = document.querySelector("#site_area").value;
-   console.log(site_area);
-   //路線価の値を取得し変数に格納
-   let road_price = document.querySelector("#road_price").value;
-   console.log(road_price);
-   //建物面積の値を取得し変数に格納    
-   let building_area = document.querySelector('#building_area').value;
-   console.log(building_area);
-   //築年数の値を取得し変数に格納    
-   let building_age = document.querySelector('#building_age').value;
-   console.log(building_age);
-   //標準建築費の値を取得し変数に格納  
-   let construction_cost = document.querySelector('#construction_cost').value;
-   console.log(construction_cost);
-    //耐用年数の値を取得し変数に格納 
-   let service_life = document.querySelector('#service_life').value;
-   console.log(service_life);
+  // //敷地面積の値を取得し変数に格納    
+  //  let site_area = document.querySelector("#site_area").value;
+  //  console.log(site_area);
+  //  //路線価の値を取得し変数に格納
+  //  let road_price = document.querySelector("#road_price").value;
+  //  console.log(road_price);
+  //  //建物面積の値を取得し変数に格納    
+  //  let building_area = document.querySelector('#building_area').value;
+  //  console.log(building_area);
+  //  //築年数の値を取得し変数に格納    
+  //  let building_age = document.querySelector('#building_age').value;
+  //  console.log(building_age);
+  //  //標準建築費の値を取得し変数に格納  
+  //  let construction_cost = document.querySelector('#construction_cost').value;
+  //  console.log(construction_cost);
+  //   //耐用年数の値を取得し変数に格納 
+  //  let service_life = document.querySelector('#service_life').value;
+  //  console.log(service_life);
    
 
   // 計算ボタンの変数宣言し、クリックしたらイベント発火
@@ -251,7 +270,7 @@ document.querySelector("#property").innerText = propertyJP.toLocaleString() + "�
 document.querySelector("#land").innerText = landJP.toLocaleString() + "円";
 document.querySelector("#comprehensive_appraisal_value").innerText = totalJP.toLocaleString() + "円";
 
-window.scrollTo(0, 5000);
+// window.scrollTo(0, 5000);
 };
 
 function toJPUnit(num) {

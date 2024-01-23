@@ -1,5 +1,5 @@
 // テキストボックスにフォーカス時、フォームの背景色を変化
-    $('#shikin_jikoshikin').focusout(function (e) {
+    $('#shikin_jikoshikin').on('focusout', function (e) {
 
         let bukken_bukkenkakaku = $('#bukken_bukkenkakaku').val();
         let shikin_jikoshikin = $('#shikin_jikoshikin').val();
@@ -18,7 +18,7 @@
     });
 
     // テキストボックスにフォーカス時、フォームの背景色を変化
-    $('#shikin_jikoshikin, #shikin_syakunyukingaku').focusout(function (e) {
+    $('#shikin_jikoshikin, #shikin_syakunyukingaku').on('focusout', function (e) {
 
         let bukken_bukkenkakaku = $('#bukken_bukkenkakaku').val();
         let shikin_jikoshikin = $('#shikin_jikoshikin').val();
