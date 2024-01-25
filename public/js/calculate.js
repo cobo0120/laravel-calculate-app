@@ -50,11 +50,10 @@ document.addEventListener('click', () => {
 
 
 
-const calculate = () => {
-  
-// 変数宣言
-  const calculation0 = document.querySelector('#calculation0');
-  const calculation1 = document.querySelector('#calculation1');
+const calculations = document.querySelectorAll('#calculation0, #calculation1');
+
+calculations.forEach(function(calculation) {
+    calculation.addEventListener("click", function(){
 
 
   //入力情報に入力された数値に単位をつけて表示（スマートフォンサイズの場合にのみ表示させる）
@@ -190,8 +189,7 @@ function updateLabelText(labelId, text) {
 
   // 計算ボタンの変数宣言し、クリックしたらイベント発火
   
-  calculation0.addEventListener('click', calculate);
-  calculation1.addEventListener('click', calculate);
+
   
 
 
@@ -228,7 +226,8 @@ function updateLabelText(labelId, text) {
   if (0 > remaining_years) {
       remaining_years = 0;
   }
-  let property = (construction_cost * 10000) * (remaining_years / building_age_value) * building_age_value;
+// 物件を求める
+  let property = (construction_cost * 10000) * (remaining_years / building_age_value) * building_area_value;
   property = Math.round(property);
 
 
@@ -271,7 +270,7 @@ document.querySelector("#land").innerText = landJP.toLocaleString() + "円";
 document.querySelector("#comprehensive_appraisal_value").innerText = totalJP.toLocaleString() + "円";
 
 // window.scrollTo(0, 5000);
-};
+});
 
 function toJPUnit(num) {
    let keta = ['', '万', '億', '兆', '京'];
@@ -286,4 +285,5 @@ function toJPUnit(num) {
 }
 
 
+});
 
