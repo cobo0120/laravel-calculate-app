@@ -28,6 +28,9 @@ $('#building_age, #building_structure').on('change', function() {
       console.log(data);
         // calc1のビューでid=construction_costの箇所に入れる
       $('#construction_cost').val(parseFloat(data.construction_cost.price));
+     $("#calculation1, #calculation2").on("click", function() {
+    $('#lbl_construction_cost').html(`${parseFloat(data.construction_cost.price)} 万円`);
+});
     })
     .fail((error) => {
         // alert('建築構造を選択してください');

@@ -13,6 +13,18 @@
 <!-- 積算評価シミュレーター -->
 
 <body>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
     <header id="header">
         <nav class="bg-gray-800 w-full">
             <div class="container mx-auto px-6 py-2 flex">
@@ -139,7 +151,7 @@
 
                                                 <input type="number"
                                                     class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
-                                                    id="shikin_syakunyukingaku" placeholder="例：1000" />
+                                                    id="shikin_syakunyukingaku" placeholder="例：1000">
 
                                                 <label for="shikin_syakunyukingaku"
                                                     class="col-span-2 sm:col-span-2">万円</label>
@@ -151,11 +163,23 @@
 
                                                 <input type="number"
                                                     class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
-                                                    id="shikin_syakunyukikan" placeholder="例：15" value="" />
+                                                    id="shikin_syakunyukikan" placeholder="例：15" value=""
+                                                    max="35" onchange="checkLoanPeriod()">
 
                                                 <label for="shikin_syakunyukikan"
                                                     class="col-span-2 sm:col-span-2">年　</label>
                                             </div>
+
+
+                                            <script>
+                                                function checkLoanPeriod() {
+                                                    var loanPeriod = document.getElementById("shikin_syakunyukikan").value;
+                                                    if (loanPeriod > 35) {
+                                                        alert("借入期間は35年までです");
+                                                    }
+                                                }
+                                            </script>
+
                                             <!-- 借入金利年利 -->
                                             <div class="flex items-center grid-cols-6 gap-4 mt-5">
                                                 <label for="shikin_syakunyukinri"
@@ -164,11 +188,22 @@
                                                 <input type="number"
                                                     class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
                                                     id="shikin_syakunyukinri" placeholder="例：3.2" step="0.01"
-                                                    value="" />
+                                                    value="" max="10" onchange="checkInterestRate()">
 
                                                 <label for="shikin_syakunyukinri"
                                                     class="col-span-2 sm:col-span-2">％　</label>
                                             </div>
+
+
+                                            <script>
+                                                function checkInterestRate() {
+                                                    var interestRate = document.getElementById("shikin_syakunyukinri").value;
+                                                    if (interestRate > 10) {
+                                                        alert("金利は10%までです");
+                                                    }
+                                                }
+                                            </script>
+
                                         </div>
                                         <!-- 縦幅の調整 -->
                                         <div class="w-1/7 mr-1"></div>

@@ -15,7 +15,7 @@ document.addEventListener('click', () => {
  const serviceLife = document.querySelector("#service_life");
  
 
- buildingStructure.addEventListener('change', () => {
+//  buildingStructure.addEventListener('change', () => {
    let val = buildingStructure.value;
    switch (val) {
        case "1":
@@ -40,16 +40,14 @@ document.addEventListener('click', () => {
            serviceLife.value = "";
            break;
    }
- });
+//  });
 });
 
 // 12/31はここまで完了
 // 標準建築費の計算をどうするか残っている
 
 
-
-
-
+// querySelectorAllで配列で取得するのでforEachで取り出す
 const calculations = document.querySelectorAll('#calculation0, #calculation1');
 
 calculations.forEach(function(calculation) {
@@ -115,7 +113,7 @@ calculations.forEach(function(calculation) {
 // 建物構造を選択したら入力情報に挿入される関数
 // ホイストとは何ぞや？　Uncaught ReferenceError: Cannot access 'building_structure' before initialization　とでたが
 
-document.addEventListener('change', () => {
+// document.addEventListener('click', () => {
  let buildingStructureValue = document.querySelector("#building_structure").value;
  let constructionCost = document.querySelector('#construction_cost').value;
  let serviceLife = document.querySelector('#service_life').value;
@@ -165,7 +163,7 @@ function updateLabelText(labelId, text) {
  document.querySelector(`#${labelId}`).innerText = text;
 }
 
-});
+// });
 
   // //敷地面積の値を取得し変数に格納    
   //  let site_area = document.querySelector("#site_area").value;
@@ -227,7 +225,7 @@ function updateLabelText(labelId, text) {
       remaining_years = 0;
   }
 // 物件を求める
-  let property = (construction_cost * 10000) * (remaining_years / building_age_value) * building_area_value;
+  let property = ((construction_cost * 1000) * building_area_value * remaining_years) /service_life_value ;
   property = Math.round(property);
 
 

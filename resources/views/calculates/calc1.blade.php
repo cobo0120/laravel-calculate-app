@@ -274,7 +274,7 @@
             <div class="flex justify-between" id="phone-footer">
                 <button type="button"
                     class="px-2 py-1 text-indigo-500 border border-indigo-500 font-semibold rounded hover:bg-indigo-100 block sm:hidden ml-16"
-                    id="calculation0" onclick="calculate()">
+                    id="calculation0" onclick="">
                     計算する
                 </button>
 
@@ -297,7 +297,7 @@
             <div class="flex justify-between m-10" id="pc-footer">
                 <button type="button"
                     class="px-10 py-1 text-indigo-500 border border-indigo-500 font-semibold rounded hover:bg-indigo-100 mr-20 hidden sm:block"
-                    id="calculation1" onclick="calculate()">
+                    id="calculation1" onclick="">
                     計算する
                 </button>
 

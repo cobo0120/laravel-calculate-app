@@ -37,8 +37,9 @@
     });
 
 
-$('#calculation2,#calculation3').click(function () {
+$('#calculation2, #calculation3').on('click', function () {
 
+   
         let bukken_bukkenkakaku = $('#bukken_bukkenkakaku').val();
         let bukken_manshituji = $('#bukken_manshituji').val();
         let bukken_souteikuusitu = $('#bukken_souteikuusitu').val();
@@ -48,6 +49,12 @@ $('#calculation2,#calculation3').click(function () {
         let shikin_syakunyukingaku = $('#shikin_syakunyukingaku').val();
         let shikin_syakunyukikan = $('#shikin_syakunyukikan').val();
         let shikin_syakunyukinri = $('#shikin_syakunyukinri').val();
+
+         // 各入力フィールドの値が空でないことを確認
+if (!bukken_bukkenkakaku || !bukken_manshituji || !bukken_souteikuusitu || !bukken_syokeihi || !shikin_jikoshikin || !shikin_syakunyukingaku || !shikin_syakunyukikan || !shikin_syakunyukinri) {
+    alert("全てのフィールドに値を入力してください。");
+    return false;
+}
 
         $("#lbl_bukken_bukkenkakaku").text(bukken_bukkenkakaku + "万円");
         $("#lbl_bukken_manshituji").text(bukken_manshituji + "万円");
