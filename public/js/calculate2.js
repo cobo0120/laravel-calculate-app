@@ -217,17 +217,20 @@ if (!bukken_bukkenkakaku || !bukken_manshituji || !bukken_souteikuusitu || !bukk
     });
 
 
-// 数字に桁表示
 function toJPUnit(num) {
-    let keta = ['', '万', '億', '兆', '京'];
-    let nums = String(num).replace(/(\d)(?=(\d\d\d\d)+$)/g, "$1,").split(",").reverse();
-    let data = '';
-    for (let i = 0; i < nums.length; i++) {
-        if (!nums[i].match(/^[0]+$/)) {
-            data = nums[i].replace(/^[0]+/g, "") + keta[i] + data;
-        }
-    }
-    return data;
+  // 数値を文字列に変換
+  let strNum = String(num);
+
+  // 3桁ごとにカンマを挿入
+  strNum = strNum.replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+
+  // 不要な0を除去
+  strNum = strNum.replace(/^0+/, '');
+
+  // カンマと0を区別するために、カンマの前にスペースを追加
+  strNum = strNum.replace(/,/g, ' ,');
+
+  return strNum;
 }
 
 //毎月返済利息の計算

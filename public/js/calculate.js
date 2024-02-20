@@ -267,20 +267,39 @@ document.querySelector("#property").innerText = propertyJP.toLocaleString() + "�
 document.querySelector("#land").innerText = landJP.toLocaleString() + "円";
 document.querySelector("#comprehensive_appraisal_value").innerText = totalJP.toLocaleString() + "円";
 
+// 表示される色の変更の場合はこちらで修正をお願いします。
+const propertyLabel = document.getElementById("property");
+propertyLabel.style.color = "red";
+
+const landLabel = document.getElementById("land");
+landLabel.style.color = "red";
+
+const comprehensiveAppraisalValueLabel = document.getElementById("comprehensive_appraisal_value");
+comprehensiveAppraisalValueLabel.style.color = "red";
+
 // window.scrollTo(0, 5000);
 });
 
 function toJPUnit(num) {
-   let keta = ['', '万', '億', '兆', '京'];
-   let nums = String(num).replace(/(\d)(?=(\d\d\d\d)+$)/g, "$1,").split(",").reverse();
-   let data = '';
-   for (var i = 0; i < nums.length; i++) {
-       if (!nums[i].match(/^[0]+$/)) {
-           data = nums[i].replace(/^[0]+/g, "") + keta[i] + data;
-       }
-   }
-   return data;
+  // 数値を文字列に変換
+  let strNum = String(num);
+
+  // 3桁ごとにカンマを挿入
+  strNum = strNum.replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+
+  // 不要な0を除去
+  strNum = strNum.replace(/^0+/, '');
+
+  // カンマと0を区別するために、カンマの前にスペースを追加
+  strNum = strNum.replace(/,/g, ' ,');
+
+  return strNum;
 }
+
+// 例
+console.log(toJPUnit(123456789)); // 123,456,789
+console.log(toJPUnit(1000000)); // 1,000,000
+console.log(toJPUnit(0.123456789)); // 0.123,456,789
 
 
 });

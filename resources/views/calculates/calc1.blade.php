@@ -236,7 +236,7 @@
                                         <div class="mb-10">
                                             <label class="w-full sm:w-1/3 pr-0 pt-0 pb-0 text-left">①物件</label>
                                             <label class="w-full sm:w-1/3 pl-0 pt-0 pb-0 text-right"
-                                                id="property"></label>
+                                                id="property" ></label>
                                             <footer class="text-left text-sm text-gray-500">
                                                 標準建築費(円/㎡) × 建物延床面積(㎡) × (耐用年数(年) -
                                                 建築年(年)) ÷ 耐用年数(年)
