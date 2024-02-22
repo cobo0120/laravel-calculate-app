@@ -56,7 +56,7 @@
                                         <div class="flex items-center grid-cols-6 gap-4">
                                             <label for="site_area" class="col-span-2 sm:col-span-2">敷地面積</label>
 
-                                            <input type="number" step="0.01"
+                                            <input
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
                                                 id="site_area" placeholder="例:100" />
 
@@ -67,7 +67,7 @@
                                         <div class="flex items-center grid-cols-6 gap-4 mt-5">
                                             <label for="road_price" class="col-span-2 sm:col-span-2">路線価</label>
 
-                                            <input type="number" step="0.01"
+                                            <input 
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
                                                 id="road_price" placeholder="例:100" />
 
@@ -97,7 +97,7 @@
                                         <div class="flex items-center grid-cols-6 gap-4 mt-5">
                                             <label for="building_area" class="col-span-5 sm:col-span-2">建物面積</label>
 
-                                            <input type="number"
+                                            <input
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
                                                 id="building_area" placeholder="例:100" value="" />
 
@@ -117,13 +117,14 @@
                                                 <option value="4">鉄骨(S造)</option>
                                                 <option value="5">軽量鉄骨</option>
                                                 <option value="6">木造</option>
+                                                <option value="7">木造(省令)35年</option>
                                             </select>
                                         </div>
                                         <!-- 築年数 -->
                                         <div class="flex items-center grid-cols-6 gap-4 mt-5">
                                             <label for="building_age" class="col-span-5 sm:col-span-2">築年数</label>
 
-                                            <input type="number"
+                                            <input
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
                                                 id="building_age" placeholder="" value="">
 

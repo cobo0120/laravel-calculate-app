@@ -68,7 +68,7 @@
                                             <label for="bukken_bukkenkakaku"
                                                 class="col-span-2 sm:col-span-2">物件価格</label>
 
-                                            <input type="number" step="0.01"
+                                            <input
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
                                                 id="bukken_bukkenkakaku" placeholder="" />
 
@@ -80,7 +80,7 @@
                                             <label for="bukken_manshituji"
                                                 class="col-span-2 sm:col-span-2">満室時想定年収</label>
 
-                                            <input type="number" step="0.01"
+                                            <input
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
                                                 id="bukken_manshituji" placeholder="" />
 
@@ -92,9 +92,9 @@
                                             <label for="bukken_souteikuusitu"
                                                 class="col-span-2 sm:col-span-2">想定空室率</label>
 
-                                            <input type="number" step="0.01"
+                                            <input
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
-                                                id="bukken_souteikuusitu" placeholder="例：10" value="" />
+                                                id="bukken_souteikuusitu" placeholder="例：10" value="" >
 
                                             <label for="bukken_souteikuusitu"
                                                 class="col-span-2 sm:col-span-2">％　</label>
@@ -104,9 +104,9 @@
                                         <div class="flex items-center grid-cols-6 gap-4 mt-5">
                                             <label for="bukken_syokeihi" class="col-span-2 sm:col-span-2">諸経費率</label>
 
-                                            <input type="number" step="0.1"
+                                            <input
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
-                                                id="bukken_syokeihi" placeholder="例：15" value="" />
+                                                id="bukken_syokeihi" placeholder="例：15" value="" >
 
                                             <label for="bukken_syokeihi" class="col-span-2 sm:col-span-2">％　</label>
                                         </div>
@@ -136,9 +136,9 @@
                                                 <label for="shikin_jikoshikin"
                                                     class="col-span-5 sm:col-span-2">自己資金</label>
 
-                                                <input type="number"
+                                                <input
                                                     class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
-                                                    id="shikin_jikoshikin" placeholder="例：1000" value="" />
+                                                    id="shikin_jikoshikin" placeholder="例：1000" value="" >
 
                                                 <label for="shikin_jikoshikin"
                                                     class="col-span-2 sm:col-span-2">万円</label>
@@ -149,9 +149,9 @@
                                                 <label for="shikin_syakunyukingaku"
                                                     class="col-span-2 sm:col-span-2">借入金額</label>
 
-                                                <input type="number"
+                                                <input
                                                     class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
-                                                    id="shikin_syakunyukingaku" placeholder="例：1000">
+                                                    id="shikin_syakunyukingaku" placeholder="例：1000" value="">
 
                                                 <label for="shikin_syakunyukingaku"
                                                     class="col-span-2 sm:col-span-2">万円</label>
@@ -161,7 +161,7 @@
                                                 <label for="shikin_syakunyukikan"
                                                     class="col-span-5 sm:col-span-2">借入期間</label>
 
-                                                <input type="number"
+                                                <input
                                                     class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
                                                     id="shikin_syakunyukikan" placeholder="例：15" value=""
                                                     max="35" onchange="checkLoanPeriod()">
@@ -185,7 +185,7 @@
                                                 <label for="shikin_syakunyukinri"
                                                     class="col-span-5 sm:col-span-2">借入金利　年利</label>
 
-                                                <input type="number"
+                                                <input
                                                     class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
                                                     id="shikin_syakunyukinri" placeholder="例：3.2" step="0.01"
                                                     value="" max="10" onchange="checkInterestRate()">
@@ -286,11 +286,12 @@
                                     <i class="fas fa-home"></i>&nbsp;**収支計算結果**
                                 </h5>
                             </div>
-                            <div id="collapseFour" class="collapse show p-10" role="tabpanel"
+                            <div id="collapseFour" class="collapse show  pl-5" role="tabpanel"
                                 aria-labelledby="headingTwo">
                                 <div class="">
                                     <label class="col-span-6 sm:col-span-6">①返済額(月額)</label>
-                                    <label class="" id="hensaigaku_getsugaku"></label>
+                                    <span class="m-10"><label class="" id="hensaigaku_getsugaku">50000</label></span>
+                                  
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     毎月の返済額
@@ -298,7 +299,7 @@
 
                                 <div class="">
                                     <label class="col-span-6 sm:col-span-6">②返済額(年額)</label>
-                                    <label class="col-span-6 sm:col-span-6" id="hensaigaku_nengaku"></label>
+                                    <span class="m-10"><label class="" id="hensaigaku_nengaku">50000</label></span>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ①返済額(月額) × 12ヶ月
@@ -306,7 +307,7 @@
 
                                 <div class="">
                                     <label class="col-span-6 sm:col-span-6">③返済比率</label>
-                                    <label class="" id="hensai_hiritsu"></label>
+                                    <span class="m-20"><label class="" id="hensai_hiritsu">50000</label></span>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ②返済額(年額) ÷ ⑤家賃収入

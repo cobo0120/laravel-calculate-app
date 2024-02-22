@@ -36,6 +36,9 @@ document.addEventListener('click', () => {
        case "6":
            serviceLife.value = "22";
            break;
+      case "7":
+           serviceLife.value = "35";
+           break;
        default:
            serviceLife.value = "";
            break;
@@ -263,9 +266,9 @@ let totalJP = toJPUnit(total);
 document.querySelector("#property").innerText = '';
 document.querySelector("#land").innerText = '';
 document.querySelector("#comprehensive_appraisal_value").innerText = '';
-document.querySelector("#property").innerText = propertyJP.toLocaleString() + "円";
-document.querySelector("#land").innerText = landJP.toLocaleString() + "円";
-document.querySelector("#comprehensive_appraisal_value").innerText = totalJP.toLocaleString() + "円";
+document.querySelector("#property").innerText = propertyJP.toLocaleString();
+document.querySelector("#land").innerText = landJP.toLocaleString();
+document.querySelector("#comprehensive_appraisal_value").innerText = totalJP.toLocaleString();
 
 // 表示される色の変更の場合はこちらで修正をお願いします。
 const propertyLabel = document.getElementById("property");
@@ -281,6 +284,13 @@ comprehensiveAppraisalValueLabel.style.color = "red";
 });
 
 function toJPUnit(num) {
+
+  // 数値を10000で割る
+  num = num / 10000;
+
+  // 数値を四捨五入
+  num = Math.round(num);
+
   // 数値を文字列に変換
   let strNum = String(num);
 
@@ -293,9 +303,11 @@ function toJPUnit(num) {
   // カンマと0を区別するために、カンマの前にスペースを追加
   strNum = strNum.replace(/,/g, ' ,');
 
+  // 万円記号を追加
+  strNum += '万円';
+
   return strNum;
 }
-
 // 例
 console.log(toJPUnit(123456789)); // 123,456,789
 console.log(toJPUnit(1000000)); // 1,000,000

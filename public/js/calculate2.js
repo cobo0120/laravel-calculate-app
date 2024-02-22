@@ -110,8 +110,9 @@ if (!bukken_bukkenkakaku || !bukken_manshituji || !bukken_souteikuusitu || !bukk
 
         //返済比率
         {
-            hensai_hiritsu = (hensaigaku_nengaku / bukken_manshituji) * 100;
-            $("#hensai_hiritsu").text(hensai_hiritsu.toFixed(2) + "％");
+        hensai_hiritsu = (hensaigaku_nengaku / bukken_manshituji) * 100;
+        hensai_hiritsu = Math.round(hensai_hiritsu * 10) / 10; // 四捨五入
+        $("#hensai_hiritsu").text(hensai_hiritsu + "％");
         }
 
         //返済額合計
@@ -182,38 +183,38 @@ if (!bukken_bukkenkakaku || !bukken_manshituji || !bukken_souteikuusitu || !bukk
             $("#gekkantedori").text(toJPUnit((nenkantedori / 12).toFixed(0)) + "円");
         }
 
-        // 表面利回り
-        {
-            hyomenrimawari = (bukken_manshituji / bukken_bukkenkakaku) * 100;
-            hyomenrimawari = (Math.round(hyomenrimawari * 100)) / 100;
-            $("#hyomenrimawari").text(hyomenrimawari + "％");
-        }
+      // 表面利回り
+{
+    hyomenrimawari = (bukken_manshituji / bukken_bukkenkakaku) * 100;
+    hyomenrimawari = Math.round(hyomenrimawari * 10) / 10; // 四捨五入
+    $("#hyomenrimawari").text(hyomenrimawari + "％");
+}
 
-        // 実質利回り
-        {
-            jissiturimawari = ((bukken_manshituji - koujyosyokeihi_nengaku) / bukken_bukkenkakaku) * 100;
-            jissiturimawari = (Math.round(jissiturimawari * 100)) / 100;
-            $("#jissiturimawari").text(jissiturimawari + "％");
-        }
+// 実質利回り
+{
+    jissiturimawari = ((bukken_manshituji - koujyosyokeihi_nengaku) / bukken_bukkenkakaku) * 100;
+    jissiturimawari = Math.round(jissiturimawari * 10) / 10; // 四捨五入
+    $("#jissiturimawari").text(jissiturimawari + "％");
+}
 
-        // 返済後利回り
-        {
-            hensaigorimawari = (nenkantedori / bukken_bukkenkakaku) * 100;
-            hensaigorimawari = (Math.round(hensaigorimawari * 100)) / 100;
-            $("#hensaigorimawari").text(hensaigorimawari + "％");
-        }
+// 返済後利回り
+{
+    hensaigorimawari = (nenkantedori / bukken_bukkenkakaku) * 100;
+    hensaigorimawari = Math.round(hensaigorimawari * 10) / 10; // 四捨五入
+    $("#hensaigorimawari").text(hensaigorimawari + "％");
+}
 
-        // 投資利回り
-        {
-            if ((bukken_bukkenkakaku - shikin_syakunyukingaku) === 0) {
-                toushirimawari = 0;
-            } else {
-                toushirimawari = (nenkantedori / shikin_jikoshikin) * 100;
-                toushirimawari = (Math.round(toushirimawari * 100)) / 100;
-            }
-            $("#toushirimawari").text(toushirimawari + "％");
+// 投資利回り
+{
+    if ((bukken_bukkenkakaku - shikin_syakunyukingaku) === 0) {
+        toushirimawari = 0;
+    } else {
+        toushirimawari = (nenkantedori / shikin_jikoshikin) * 100;
+        toushirimawari = Math.round(toushirimawari * 10) / 10; // 四捨五入
+    }
+    $("#toushirimawari").text(toushirimawari + "％");
 
-        }
+}
     });
 
 
