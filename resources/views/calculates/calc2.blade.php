@@ -290,7 +290,7 @@
                                 aria-labelledby="headingTwo">
                                 <div class="">
                                     <label class="col-span-6 sm:col-span-6">①返済額(月額)</label>
-                                    <span class="m-10"><label class="" id="hensaigaku_getsugaku">50000</label></span>
+                                    <label class="" id="hensaigaku_getsugaku"></label>
                                   
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
@@ -299,7 +299,7 @@
 
                                 <div class="">
                                     <label class="col-span-6 sm:col-span-6">②返済額(年額)</label>
-                                    <span class="m-10"><label class="" id="hensaigaku_nengaku">50000</label></span>
+                                    <label class="" id="hensaigaku_nengaku">50000</label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ①返済額(月額) × 12ヶ月
@@ -307,7 +307,7 @@
 
                                 <div class="">
                                     <label class="col-span-6 sm:col-span-6">③返済比率</label>
-                                    <span class="m-20"><label class="" id="hensai_hiritsu">50000</label></span>
+                                    <label class="" id="hensai_hiritsu">50000</label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ②返済額(年額) ÷ ⑤家賃収入

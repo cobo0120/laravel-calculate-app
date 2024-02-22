@@ -65,6 +65,8 @@ if (!bukken_bukkenkakaku || !bukken_manshituji || !bukken_souteikuusitu || !bukk
         $("#lbl_shikin_syakunyukikan").text(shikin_syakunyukikan + "年");
         $("#lbl_shikin_syakunyukinri").text(shikin_syakunyukinri + "％");
 
+        
+
         wk_bukken_bukkenkakaku = parseFloat(bukken_bukkenkakaku);
         wk_shikin_syakunyukingaku = parseFloat(shikin_syakunyukingaku);
         wk_shikin_syakunyukinri = parseFloat(shikin_syakunyukinri);
