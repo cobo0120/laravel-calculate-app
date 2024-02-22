@@ -124,7 +124,7 @@
                                         <div class="flex items-center grid-cols-6 gap-4 mt-5">
                                             <label for="building_age" class="col-span-5 sm:col-span-2">築年数</label>
 
-                                            <input
+                                            <input type="number"
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
                                                 id="building_age" placeholder="" value="">
 
