@@ -234,29 +234,39 @@
 
                                 <div id="collapseFour" class="show" role="tabpanel" aria-labelledby="headingTwo">
                                     <div class="p-10">
-                                        <div class="mb-10">
-                                            <label class="w-full sm:w-1/3 pr-0 pt-0 pb-0 text-left">①物件</label>
-                                            <label class="w-full sm:w-1/3 pl-0 pt-0 pb-0 text-right"
-                                                id="property"></label>
+
+                                        <div class="flex flex-wrap mb-0">
+                                            <label class="w-1/2  pr-0 pt-0 pb-0 text-left">①物件</label>
+                                            <label class="w-1/2  pl-0 pt-0 pb-0 text-right" id="property"></label>
+                                        </div>
+
+                                        <div>
                                             <footer class="text-left text-sm text-gray-500">
                                                 標準建築費(円/㎡) × 建物延床面積(㎡) × (耐用年数(年) -
                                                 建築年(年)) ÷ 耐用年数(年)
                                             </footer>
                                         </div>
 
-                                        <div class="mb-10">
-                                            <label class="w-1/2 sm:w-1/3 pr-0 pt-0 pb-0 text-left">②土地</label>
-                                            <label class="w-1/2 sm:w-1/3 pl-0 pt-0 pb-0 text-right"
-                                                id="land"></label>
+
+                                        <div class="flex flex-wrap mb-0">
+                                            <label class="w-1/2  pr-0 pt-0 pb-0 text-left">②土地</label>
+                                            <label class="w-1/2  pl-0 pt-0 pb-0 text-right" id="land"></label>
+                                        </div>
+
+                                        <div>
                                             <footer class="text-left text-sm text-gray-500">
                                                 敷地面積 × 路線価
                                             </footer>
                                         </div>
 
-                                        <div class="mb-10">
-                                            <label class="w-1/2 sm:w-1/3 pr-0 pt-0 pb-0 text-left">③総合評価額</label>
-                                            <label class="w-1/2 sm:w-1/3 pl-0 pt-0 pb-0 text-right"
+
+                                        <div class="flex flex-wrap mb-0">
+                                            <label class="w-1/2  pr-0 pt-0 pb-0 text-left">③総合評価額</label>
+                                            <label class="w-1/2  pl-0 pt-0 pb-0 text-right"
                                                 id="comprehensive_appraisal_value"></label>
+                                        </div>
+
+                                        <div>
                                             <footer class="text-left text-sm text-gray-500">
                                                 ①物件 + ②土地
                                             </footer>
