@@ -67,7 +67,7 @@
                                         <div class="flex items-center grid-cols-6 gap-4 mt-5">
                                             <label for="road_price" class="col-span-2 sm:col-span-2">路線価</label>
 
-                                            <input 
+                                            <input
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
                                                 id="road_price" placeholder="例:100" />
 
@@ -237,7 +237,7 @@
                                         <div class="mb-10">
                                             <label class="w-full sm:w-1/3 pr-0 pt-0 pb-0 text-left">①物件</label>
                                             <label class="w-full sm:w-1/3 pl-0 pt-0 pb-0 text-right"
-                                                id="property" ></label>
+                                                id="property"></label>
                                             <footer class="text-left text-sm text-gray-500">
                                                 標準建築費(円/㎡) × 建物延床面積(㎡) × (耐用年数(年) -
                                                 建築年(年)) ÷ 耐用年数(年)

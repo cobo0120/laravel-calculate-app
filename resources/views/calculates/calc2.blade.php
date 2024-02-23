@@ -94,7 +94,7 @@
 
                                             <input
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
-                                                id="bukken_souteikuusitu" placeholder="例：10" value="" >
+                                                id="bukken_souteikuusitu" placeholder="例：10" value="">
 
                                             <label for="bukken_souteikuusitu"
                                                 class="col-span-2 sm:col-span-2">％　</label>
@@ -106,7 +106,7 @@
 
                                             <input
                                                 class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
-                                                id="bukken_syokeihi" placeholder="例：15" value="" >
+                                                id="bukken_syokeihi" placeholder="例：15" value="">
 
                                             <label for="bukken_syokeihi" class="col-span-2 sm:col-span-2">％　</label>
                                         </div>
@@ -138,7 +138,7 @@
 
                                                 <input
                                                     class="w-1/3 ml-auto form-input border-2 border-blue-500 rounded-lg text-center"
-                                                    id="shikin_jikoshikin" placeholder="例：1000" value="" >
+                                                    id="shikin_jikoshikin" placeholder="例：1000" value="">
 
                                                 <label for="shikin_jikoshikin"
                                                     class="col-span-2 sm:col-span-2">万円</label>
@@ -233,7 +233,7 @@
                                 </div>
 
                                 <div class="flex flex-wrap mb-0">
-                                    <label class="w-1/2 sm:w-1/3 pr-0 pt-0 pb-0 text-leftt">満室時想定年収</label>
+                                    <label class="w-1/2 sm:w-1/3 pr-0 pt-0 pb-0 text-left">満室時想定年収</label>
                                     <label class="w-1/2 sm:w-1/3 pr-0 pt-0 pb-0 text-right"
                                         id="lbl_bukken_manshituji"></label>
                                 </div>
@@ -281,124 +281,124 @@
                     <div class="pt-0 mr-auto">
                         <!-- 右側の計算結果表示 -->
                         <div class="card">
-                            <div class="bg-gray-50 p-4">
+                            <div class="bg-gray-50 pt-4 pl-2">
                                 <h5 class="font-bold">
-                                    <i class="fas fa-home"></i>&nbsp;**収支計算結果**
+                                    <i class="fas fa-home pl-2"></i>&nbsp;**収支計算結果**
                                 </h5>
                             </div>
-                            <div id="collapseFour" class="collapse show  pl-5" role="tabpanel"
+                            <div id="collapseFour" class="card-body pt-2 pl-10 pr-10" role="tabpanel"
                                 aria-labelledby="headingTwo">
-                                <div class="">
-                                    <label class="col-span-6 sm:col-span-6">①返済額(月額)</label>
-                                    <label class="" id="hensaigaku_getsugaku"></label>
-                                  
+
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2 pr-0 pt-0 pb-0 text-left">①返済額(月額)</label>
+                                    <label class="text-red-500 w-1/2 pr-0 pt-0 pb-0 text-right"
+                                        id="hensaigaku_getsugaku"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     毎月の返済額
                                 </footer>
 
-                                <div class="">
-                                    <label class="col-span-6 sm:col-span-6">②返済額(年額)</label>
-                                    <label class="" id="hensaigaku_nengaku"></label>
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2  pr-0 pt-0 pb-0 text-left">②返済額(年額)</label>
+                                    <label class="text-red-500 w-1/2  pr-0 pt-0 pb-0 text-right"
+                                        id="hensaigaku_nengaku"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ①返済額(月額) × 12ヶ月
                                 </footer>
 
-                                <div class="">
-                                    <label class="col-span-6 sm:col-span-6">③返済比率</label>
-                                    <label class="" id="hensai_hiritsu"></label>
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2  pr-0 pt-0 pb-0 text-left">③返済比率</label>
+                                    <label class="text-red-500  w-1/2  pr-0 pt-0 pb-0 text-right"
+                                        id="hensai_hiritsu"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ②返済額(年額) ÷ ⑤家賃収入
                                 </footer>
 
-                                <div class="">
-                                    <label class="col-span-6 sm:col-span-6">④返済総額</label>
-                                    <label class="" id="hensai_sougaku"></label>
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2  pr-0 pt-0 pb-0 text-left">④返済総額</label>
+                                    <label class="text-red-500 w-1/2  pr-0 pt-0 pb-0 text-right"
+                                        id="hensai_sougaku"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ②返済額(年額) × 借入期間
                                 </footer>
 
-                                <div class="">
-                                    <label class="col-span-6 sm:col-span-6">⑤家賃収入(年額)</label>
-                                    <label class="col-span-6 sm:col-span-6" id="yachinsyunyu_nengaku"></label>
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2  pr-0 pt-0 pb-0 text-left">⑤家賃収入(年額)</label>
+                                    <label class="text-red-500 w-1/2  pr-0 pt-0 pb-0 text-right"
+                                        id="yachinsyunyu_nengaku"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     年間想定収入
                                 </footer>
 
-                                <div class="">
-                                    <label class="col-span-6 sm:col-span-6">⑥控除・諸経費(年額)</label>
-                                    <label class="col-span-6 sm:col-span-6" id="koujyosyokeihi_nengaku"></label>
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2  pr-0 pt-0 pb-0 text-left">⑥控除・諸経費(年額)</label>
+                                    <label class="text-red-500 w-1/2  pr-0 pt-0 pb-0 text-right"
+                                        id="koujyosyokeihi_nengaku"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ⑤家賃収入(年額) × ( 空室率 ＋ 諸経費率 )
                                 </footer>
 
-                                <div class="form-group row mb-0">
-                                    <label class="col-6 col-sm-6 col-form-label pr-0 pt-0 pb-0 text-left">⑦年間支出</label>
-                                    <label class="col-6 col-sm-6 col-form-label pl-0 pt-0 pb-0 text-right"
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2  pr-0 pt-0 pb-0 text-left">⑦年間支出</label>
+                                    <label class="text-red-500 w-1/2  pr-0 pt-0 pb-0 text-right"
                                         id="nenkanshisyutsu"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ②返済額(年額) ＋ ⑥控除・諸経費(年額)
                                 </footer>
 
-                                <div class="form-group row mb-0">
-                                    <label
-                                        class="col-6 col-sm-6 col-form-label pr-0 pt-0 pb-0 text-left">⑧年間手取り</label>
-                                    <label class="col-6 col-sm-6 col-form-label pl-0 pt-0 pb-0 text-right text-primary"
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2  pr-0 pt-0 pb-0 text-left">⑧年間手取り</label>
+                                    <label class="text-red-500 w-1/2  pr-0 pt-0 pb-0 text-right"
                                         id="nenkantedori"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ⑤家賃収入(年額) － ⑦年間支出
                                 </footer>
 
-                                <div class="form-group row mb-0">
-                                    <label
-                                        class="col-6 col-sm-6 col-form-label pr-0 pt-0 pb-0 text-left">⑨月間手取り</label>
-                                    <label class="col-6 col-sm-6 col-form-label pl-0 pt-0 pb-0 text-right text-primary"
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2 pr-0 pt-0 pb-0 text-left">⑨月間手取り</label>
+                                    <label class="text-red-500 w-1/2  pr-0 pt-0 pb-0 text-right"
                                         id="gekkantedori"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ⑧年間手取り ÷ 12ヶ月
                                 </footer>
 
-                                <div class="form-group row mb-0">
-                                    <label
-                                        class="col-6 col-sm-6 col-form-label pr-0 pt-0 pb-0 text-left">⑩表面利回り</label>
-                                    <label class="col-6 col-sm-6 col-form-label pl-0 pt-0 pb-0 text-right"
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2  pr-0 pt-0 pb-0 text-left">⑩表面利回り</label>
+                                    <label class="text-red-500 w-1/2  pr-0 pt-0 pb-0 text-right"
                                         id="hyomenrimawari"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ⑤家賃収入(年額) ÷ 物件価格
                                 </footer>
 
-                                <div class="form-group row mb-0">
-                                    <label
-                                        class="col-6 col-sm-6 col-form-label pr-0 pt-0 pb-0 text-left">⑪実質利回り</label>
-                                    <label class="col-6 col-sm-6 col-form-label pl-0 pt-0 pb-0 text-right"
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2  pr-0 pt-0 pb-0 text-left">⑪実質利回り</label>
+                                    <label class="text-red-500 w-1/2 pr-0 pt-0 pb-0 text-right"
                                         id="jissiturimawari"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     (⑤家賃収入(年額) － ⑥控除・諸経費(年額)) ÷ 物件価格
                                 </footer>
 
-                                <div class="form-group row mb-0">
-                                    <label
-                                        class="col-6 col-sm-6 col-form-label pr-0 pt-0 pb-0 text-left">⑫返済後利回り</label>
-                                    <label class="col-6 col-sm-6 col-form-label pl-0 pt-0 pb-0 text-right"
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2  pr-0 pt-0 pb-0 text-left">⑫返済後利回り</label>
+                                    <label class="text-red-500 w-1/2  pr-0 pt-0 pb-0 text-right"
                                         id="hensaigorimawari"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
                                     ⑧年間手取り ÷ 物件価格
                                 </footer>
-                                <div class="form-group row mb-0">
-                                    <label
-                                        class="col-6 col-sm-6 col-form-label pr-0 pt-0 pb-0 text-left">⑬投資利回り</label>
-                                    <label class="col-6 col-sm-6 col-form-label pl-0 pt-0 pb-0 text-right"
+                                <div class="flex flex-wrap mb-0">
+                                    <label class="w-1/2  pr-0 pt-0 pb-0 text-left">⑬投資利回り</label>
+                                    <label class="text-red-500 w-1/2  pr-0 pt-0 pb-0 text-right"
                                         id="toushirimawari"></label>
                                 </div>
                                 <footer class="text-left text-sm text-gray-500">
@@ -410,7 +410,7 @@
                 </div>
             </form>
             <!-- スマートフォンサイズ対応のボタン対応 -->
-            <div class="flex justify-between" id="phone-footer">
+            <div class="flex justify-between pt-10" id="phone-footer">
                 <button type="button"
                     class="px-2 py-1 text-indigo-500 border border-indigo-500 font-semibold rounded hover:bg-indigo-100 block sm:hidden ml-16"
                     id="calculation2">

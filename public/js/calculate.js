@@ -271,13 +271,13 @@ document.querySelector("#land").innerText = landJP.toLocaleString();
 document.querySelector("#comprehensive_appraisal_value").innerText = totalJP.toLocaleString();
 
 // 表示される色の変更の場合はこちらで修正をお願いします。
-const propertyLabel = document.getElementById("property");
+let propertyLabel = document.getElementById("property");
 propertyLabel.style.color = "red";
 
-const landLabel = document.getElementById("land");
+let landLabel = document.getElementById("land");
 landLabel.style.color = "red";
 
-const comprehensiveAppraisalValueLabel = document.getElementById("comprehensive_appraisal_value");
+let comprehensiveAppraisalValueLabel = document.getElementById("comprehensive_appraisal_value");
 comprehensiveAppraisalValueLabel.style.color = "red";
 
 // window.scrollTo(0, 5000);
