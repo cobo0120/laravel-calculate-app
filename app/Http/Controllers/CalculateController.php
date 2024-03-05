@@ -56,7 +56,7 @@ public function data_building(Request $request){
 
     // データベース上に標準建築費が見つからない場合、建物の年齢に基づいて最新または最古の費用を取得
     if (is_null($construction_cost)) {
-        if ($request->building_age <= 10) {
+        if ($request->building_age <= 3) {
             // 最新の標準建築費を取得
     $construction_cost = Building::select($columnName .' as price')
                 ->whereNotNull($columnName)
