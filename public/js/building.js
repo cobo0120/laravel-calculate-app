@@ -1,7 +1,7 @@
 $('#building_age, #building_structure').on('change', function() {
     // 現在の年(西暦)を取得
     // let current_year = new Date().getFullYear();
-    let current_year = 2018;
+    let current_year = new Date().getFullYear();
     // ビューのcalc1のvalueにある築年数を取得する
     let building_age = $('#building_age').val();
     // データベースの値（西暦）を取得のため{（現在の西暦ー築年数＝建築築年（西暦））}
