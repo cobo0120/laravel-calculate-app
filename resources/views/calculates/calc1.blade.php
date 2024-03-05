@@ -407,7 +407,7 @@
                                 </tbody>
                             </table>
 
-                            <table class="table-auto m-3">
+                            {{-- <table class="table-auto m-3">
                                 <tbody>
                                     <tr>
                                         <td class="text-start font-small font-bold">
@@ -425,7 +425,7 @@
                                         </td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table> --}}
                         </div>
                     </div>
                 </div>
